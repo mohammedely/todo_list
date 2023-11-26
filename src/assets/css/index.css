@@ -33,9 +33,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
+/* html {
   direction: rtl;
-}
+} */
 
 body {
   background-color: var(--color-bg);
