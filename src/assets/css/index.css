@@ -111,9 +111,9 @@ main {
   align-items: center;
   transition: 0.3s ease-in-out;
 }
-.todos-form_icon:hover {
-  /* color: var(--color-green); */
-}
+/* .todos-form_icon:hover {
+  color: var(--color-green);
+} */
 .todos-form_icon.active {
   color: var(--color-green);
 }
@@ -136,8 +136,8 @@ main {
   font-family: var(--font-family);
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
-.todos-form_submit {
-}
+/* .todos-form_submit {
+} */
 .btn {
   min-height: 3rem;
   font-size: 1.25rem;
