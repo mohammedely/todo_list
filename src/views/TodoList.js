@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import Todos from '../components/todos/Todos'
 import TodosForm from '../components/todos/TodosForm'
 
-const initialData = [
-  {id: 1, title: "Do primaries", done: false},
-  {id: 2, title: "Buy products", done: true},
-  {id: 3, title: "Watch course", done: false},
-  {id: 4, title: "Write code", done: true},
-];
-// const initialData = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
+// const initialData = [
+//   {id: 1, title: "Do primaries", done: false},
+//   {id: 2, title: "Buy products", done: true},
+//   {id: 3, title: "Watch course", done: false},
+//   {id: 4, title: "Write code", done: true},
+// ];
+const initialData = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
 
 const TodoList = () => {
 
@@ -16,6 +16,10 @@ const TodoList = () => {
   // modes: add, filter, edit
   const [mode, setMode] = useState('add')
   const [activeTodo, setActiveTodo] = useState(null)
+
+  const setToLocal = () => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }
 
   const toggleTodo = (id) => {
     // const newData = todos.map(td => {
@@ -34,6 +38,7 @@ const TodoList = () => {
       })
       return newData
     })
+    
   }
 
   const deleteTodo = id => {
@@ -41,6 +46,7 @@ const TodoList = () => {
       const newData = data.filter(td => td.id !== id)
       return newData
     })
+    
   }
   
   const addNewTodo = (title) => {
@@ -66,6 +72,7 @@ const TodoList = () => {
       setTodos(newTodos)
       setMode('add')
     }
+    
   }
 
   const toggleFilter = () => {
@@ -92,6 +99,8 @@ const TodoList = () => {
   if (mode === 'edit' && activeTodo) {
     currentTodos = [activeTodo]
   }
+
+  setToLocal()
   
   return (
     <main>
