@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@400;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-bg: #1c1a23;
+  --color-hover: #2f2b3b;
+  --color-green: #4ef59d;
+  --color-yellow: #ffcc70;
+  --color-red: #fb4d8d;
+  --color-red-dark: #c5396d;
+  --color-violet: #756c93;
+  --color-text: #dddce3;
+  --color-text-light: #a8a3ba;
+  --color-dark: #030203;
+
+  --shadow-card: 6px 6px 15px rgba(0, 0, 0, 0.3),
+    -5px -5px 12px rgba(117, 108, 147, 0.1);
+
+  --font-family: "Almarai", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #b8c1ee 0%,
+    #f0b9ec 46%,
+    #fdefd3 100%
+  );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  width: 100vw;
+  overflow: hidden;
+}
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1.5rem auto 2rem auto;
+  font-weight: 300;
+  color: var(--color-bg);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+}
+.container {
+  min-height: 70vh;
+  width: 50vw;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-card);
+  border-top: 1px solid var(--color-red);
+  border-bottom: 1px solid var(--color-dark);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 850px) {
+  .container {
+    width: 75vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.todos-form {
+  background-color: var(--color-hover);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.todos-form_icon {
+  margin-left: 1.5rem;
+  cursor: pointer;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.todos-form_icon:hover {
+  /* color: var(--color-green); */
+}
+.todos-form_icon.active {
+  color: var(--color-green);
+}
+.todos-form_form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.todos-form_form input {
+  flex: 1;
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-bg);
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-family: var(--font-family);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.todos-form_submit {
+}
+.btn {
+  min-height: 3rem;
+  font-size: 1.25rem;
+  font-family: inherit;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--color-red);
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background-color: var(--color-red-dark);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+  box-shadow: none;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/*  ------ todo style ------- */
+.todos-todo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg);
+  padding: 1.25rem 1rem;
+  transition: all 0.3s;
+}
+.todos-todo:hover {
+  background-color: var(--color-hover);
+}
+.todos-todo_icon {
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+.todos-todo_text {
+  flex: 1;
+  margin: 0 1rem;
+  vertical-align: top;
+}
+.todos-todo_cta {
+  display: flex;
+  align-items: center;
+}
+.todos-todo_cta-edit {
+  color: var(--color-yellow);
+  cursor: pointer;
+}
+.todos-todo_cta-delete {
+  margin-right: 1rem;
+  color: var(--color-red);
+  cursor: pointer;
+}
+.todos-todo_cta > div {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.todos-todo:hover .todos-todo_cta > div {
+  opacity: 1;
+}
+
+.todos-todo.done .todos-todo_icon {
+  color: var(--color-green);
+}
+.todos-todo.done .todos-todo_text {
+  text-decoration: line-through;
+  color: var(--color-text-light);
+}
+
+.no-todos {
+  text-align: center;
+  font-weight: normal;
+  margin-top: 2.5rem;
+  color: var(--color-text-light);
+  opacity: 0.75;
+}
