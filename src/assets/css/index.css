@@ -194,7 +194,7 @@ main {
   cursor: pointer;
 }
 .todos-todo_cta-delete {
-  margin-right: 1rem;
+  margin-left: 1rem;
   color: var(--color-red);
   cursor: pointer;
 }
