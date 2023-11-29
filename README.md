@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## About the application:
 
 <img src='img1.png' title='Todo-list App'>
+<img src='img2.png' title='Todo-list App'>
 
 ## Available Scripts
 
